@@ -3,131 +3,346 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>نمونه‌های پارچه - RION COLLECTION</title>
+    <title>RION COLLECTION - پارچه پرده‌ای لوکس</title>
     <style>
+        :root {
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --gray: #e9ecef;
+            --dark-gray: #6c757d;
+            --black: #212529;
+            --gold: #d4af37;
+            --teal: #008080;
+        }
+        
         * { 
             margin: 0; 
             padding: 0; 
             box-sizing: border-box; 
-            font-family: 'Vazirmatn', 'Segoe UI', sans-serif; 
+            font-family: 'Vazirmatn', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; 
         }
         
         body { 
-            background: #f8f9fa; 
-            color: #2d3748; 
+            background: var(--white); 
+            color: var(--black); 
             line-height: 1.6; 
+            min-height: 100vh;
         }
         
-        .header { 
-            background: linear-gradient(135deg, #008080 0%, #006666 100%); 
-            color: white; 
-            padding: 3rem 0; 
-            text-align: center; 
+        /* هدر مینیمال */
+        .header {
+            background: var(--white);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
         }
         
-        .container { 
-            max-width: 1200px; 
-            margin: 0 auto; 
-            padding: 2rem; 
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        .gallery { 
-            display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 2rem; 
-            margin: 3rem 0; 
-        }
-        
-        .sample-card { 
-            background: white; 
-            border-radius: 15px; 
-            overflow: hidden; 
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1); 
-        }
-        
-        .sample-image { 
-            width: 100%; 
-            height: 200px; 
-            background: #e2e8f0; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            color: #718096; 
-            font-size: 1rem; 
-        }
-        
-        .sample-info { 
-            padding: 1.5rem; 
-        }
-        
-        .fabric-specs {
-            list-style: none;
-            margin: 1rem 0;
-        }
-        
-        .fabric-specs li {
-            padding: 0.3rem 0;
-            color: #4a5568;
-        }
-        
-        .back-link {
-            display: inline-block;
-            margin-top: 2rem;
-            color: #008080;
+        .logo {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            color: var(--black);
             text-decoration: none;
-            font-weight: 500;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 300;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--black);
+        }
+        
+        /* هیرو سکشن */
+        .hero {
+            background: var(--light-gray);
+            padding: 8rem 0 6rem;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--dark-gray);
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        /* گالری محصولات */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: center;
+            margin-bottom: 4rem;
+            letter-spacing: 1px;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+        }
+        
+        .product-card {
+            background: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 400px;
+            background: var(--gray);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark-gray);
+            font-size: 1rem;
+            font-weight: 300;
+        }
+        
+        .product-info {
+            text-align: center;
+        }
+        
+        .product-title {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .product-category {
+            font-size: 0.9rem;
+            color: var(--dark-gray);
+            font-weight: 300;
+        }
+        
+        /* سکشن خدمات */
+        .services {
+            background: var(--light-gray);
+            padding: 6rem 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 4rem;
+            text-align: center;
+        }
+        
+        .service-item h3 {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            letter-spacing: 1px;
+        }
+        
+        .service-item p {
+            color: var(--dark-gray);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        
+        /* فوتر */
+        .footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+        }
+        
+        .footer-section h4 {
+            font-size: 1rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--dark-gray);
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+        
+        /* انیمیشن‌های ظریف */
+        .product-card {
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
 </head>
 <body>
+    <!-- هدر -->
     <header class="header">
-        <div class="container">
-            <h1>نمونه‌های پارچه RION COLLECTION</h1>
-            <p>انواع جنس، رنگ و بافت پارچه‌های پرده‌ای</p>
-        </div>
+        <nav class="nav-container">
+            <a href="#" class="logo">RION</a>
+            <ul class="nav-links">
+                <li><a href="#">محصولات</a></li>
+                <li><a href="#">نمونه‌کارها</a></li>
+                <li><a href="#">درباره ما</a></li>
+                <li><a href="#">تماس</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <div class="container">
-        <div class="gallery">
-            <div class="sample-card">
-                <div class="sample-image">📸 جایگذاری عکس نمونه پارچه ۱</div>
-                <div class="sample-info">
-                    <h3>حریر ابریشمی</h3>
-                    <ul class="fabric-specs">
-                        <li>جنس: کتان + ویسکوز + ابریشم</li>
-                        <li>رنگ: سفید یخچالی</li>
-                        <li>کاربرد: ویلاهای لوکس</li>
-                    </ul>
+    <!-- هیرو -->
+    <section class="hero">
+        <div class="container">
+            <h1>RION COLLECTION</h1>
+            <p>پارچه‌های پرده‌ای لوکس با طراحی مدرن و کیفیت بی‌نظیر برای فضای زندگی شما</p>
+        </div>
+    </section>
+
+    <!-- محصولات -->
+    <section class="container">
+        <h2 class="section-title">محصولات منتخب</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">نمونه آویزی</div>
+                <div class="product-info">
+                    <h3 class="product-title">پرده حریر لوکس</h3>
+                    <p class="product-category">نمونه آویزی</p>
                 </div>
             </div>
             
-            <div class="sample-card">
-                <div class="sample-image">📸 جایگذاری عکس نمونه پارچه ۲</div>
-                <div class="sample-info">
-                    <h3>تور ضدحساسیت</h3>
-                    <ul class="fabric-specs">
-                        <li>جنس: پلی استر مرغوب</li>
-                        <li>رنگ: شفاف</li>
-                        <li>کاربرد: خانه‌های مدرن</li>
-                    </ul>
+            <div class="product-card">
+                <div class="product-image">تور مدرن</div>
+                <div class="product-info">
+                    <h3 class="product-title">تور شفاف</h3>
+                    <p class="product-category">نمونه تور</p>
                 </div>
             </div>
             
-            <div class="sample-card">
-                <div class="sample-image">📸 جایگذاری عکس نمونه پارچه ۳</div>
-                <div class="sample-info">
-                    <h3>پارچه اداری</h3>
-                    <ul class="fabric-specs">
-                        <li>جنس: کتان فشرده</li>
-                        <li>رنگ: خاکستری ذغالی</li>
-                        <li>کاربرد: دفاتر کاری</li>
-                    </ul>
+            <div class="product-card">
+                <div class="product-image">پرده اداری</div>
+                <div class="product-info">
+                    <h3 class="product-title">پرده سازمانی</h3>
+                    <p class="product-category">هتل و دفتر</p>
                 </div>
             </div>
         </div>
-        
-        <a href="index.html" class="back-link">← بازگشت به صفحه اصلی</a>
-    </div>
+    </section>
+
+    <!-- خدمات -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">خدمات ما</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <h3>فروش عمده</h3>
+                    <p>فروش کالیته و برش عمده برای فروشگاه‌ها و نمایشگاه‌ها</p>
+                </div>
+                <div class="service-item">
+                    <h3>ارسال سراسری</h3>
+                    <p>ارسال به تمام نقاط ایران با بسته‌بندی اختصاصی</p>
+                </div>
+                <div class="service-item">
+                    <h3>مشاوره تخصصی</h3>
+                    <p>مشاوره رایگان برای انتخاب بهترین پارچه متناسب با فضای شما</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>تماس با ما</h4>
+                <p>ایمان درگاهی: ۰۹۱۲۸۹۰۷۳۰۶</p>
+                <p>تهران و شهرستان</p>
+            </div>
+            <div class="footer-section">
+                <h4>خدمات</h4>
+                <p>عرضه مستقیم پارچه</p>
+                <p>برش و دوخت اختصاصی</p>
+                <p>نورپردازی RGB</p>
+            </div>
+            <div class="footer-section">
+                <h4>دسترسی سریع</h4>
+                <p><a href="installed-samples.html">نمونه‌های آویزی</a></p>
+                <p><a href="fabric-samples.html">نمونه‌های تور</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© ۲۰۲۴ RION COLLECTION - کلیه حقوق محفوظ است</p>
+        </div>
+    </footer>
 </body>
 </html>
