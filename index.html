@@ -29,14 +29,14 @@
             min-height: 100vh;
         }
         
-        /* هدر مینیمال */
+        /* هدر */
         .header {
             background: var(--white);
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             border-bottom: 1px solid var(--gray);
             position: sticky;
             top: 0;
-            z-index: 100;
+            z-index: 1000;
             backdrop-filter: blur(10px);
         }
         
@@ -50,11 +50,13 @@
         }
         
         .logo {
-            font-size: 2rem;
-            font-weight: 300;
-            letter-spacing: 3px;
-            color: var(--black);
-            text-decoration: none;
+            height: 50px;
+            width: auto;
+            transition: opacity 0.3s ease;
+        }
+        
+        .logo:hover {
+            opacity: 0.8;
         }
         
         .nav-links {
@@ -70,10 +72,26 @@
             font-size: 0.9rem;
             letter-spacing: 1px;
             transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            right: 0;
+            width: 0;
+            height: 1px;
+            background: var(--teal);
+            transition: width 0.3s ease;
         }
         
         .nav-links a:hover {
             color: var(--black);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
         }
         
         /* هیرو سکشن */
@@ -124,6 +142,11 @@
             background: var(--white);
             position: relative;
             overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
         }
         
         .product-image {
@@ -182,6 +205,31 @@
             line-height: 1.6;
         }
         
+        /* سکشن تماس */
+        .contact-section {
+            background: linear-gradient(135deg, var(--teal) 0%, #006666 100%);
+            color: var(--white);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            font-size: 1.1rem;
+            line-height: 2;
+            margin-bottom: 2rem;
+        }
+        
+        .phone-number {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 1rem 0;
+        }
+        
         /* فوتر */
         .footer {
             background: var(--black);
@@ -198,6 +246,11 @@
             gap: 3rem;
         }
         
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 1rem;
+        }
+        
         .footer-section h4 {
             font-size: 1rem;
             font-weight: 400;
@@ -210,6 +263,12 @@
             text-decoration: none;
             font-weight: 300;
             line-height: 1.8;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-section a:hover {
+            color: var(--white);
         }
         
         .footer-bottom {
@@ -222,13 +281,34 @@
             font-size: 0.9rem;
         }
         
-        /* انیمیشن‌های ظریف */
-        .product-card {
-            transition: transform 0.3s ease;
+        /* صفحه‌بندی */
+        .page-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
         }
         
-        .product-card:hover {
-            transform: translateY(-5px);
+        .page-link-card {
+            background: var(--white);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+            border: 1px solid var(--gray);
+            transition: all 0.3s ease;
+        }
+        
+        .page-link-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-3px);
+        }
+        
+        .page-link-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--teal);
         }
         
         @media (max-width: 768px) {
@@ -243,6 +323,10 @@
             .products-grid {
                 grid-template-columns: 1fr;
             }
+            
+            .logo {
+                height: 40px;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
@@ -251,12 +335,14 @@
     <!-- هدر -->
     <header class="header">
         <nav class="nav-container">
-            <a href="#" class="logo">RION</a>
+            <a href="index.html">
+                <img src="logo.png" alt="RION COLLECTION" class="logo">
+            </a>
             <ul class="nav-links">
-                <li><a href="#">محصولات</a></li>
-                <li><a href="#">نمونه‌کارها</a></li>
-                <li><a href="#">درباره ما</a></li>
-                <li><a href="#">تماس</a></li>
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="installed-samples.html">نمونه‌های آویزی</a></li>
+                <li><a href="fabric-samples.html">نمونه‌های تور</a></li>
+                <li><a href="#contact">تماس با ما</a></li>
             </ul>
         </nav>
     </header>
@@ -266,6 +352,23 @@
         <div class="container">
             <h1>RION COLLECTION</h1>
             <p>پارچه‌های پرده‌ای لوکس با طراحی مدرن و کیفیت بی‌نظیر برای فضای زندگی شما</p>
+        </div>
+    </section>
+
+    <!-- لینک‌های سریع -->
+    <section class="container">
+        <div class="page-links">
+            <a href="installed-samples.html" class="page-link-card">
+                <div class="page-link-icon">🏠</div>
+                <h3>نمونه‌های آویزی</h3>
+                <p>مشاهده پروژه‌های نصب شده در ویلاها و هتل‌ها</p>
+            </a>
+            
+            <a href="fabric-samples.html" class="page-link-card">
+                <div class="page-link-icon">🎨</div>
+                <h3>نمونه‌های تور</h3>
+                <p>انواع جنس، رنگ و بافت پارچه‌های پرده‌ای</p>
+            </a>
         </div>
     </section>
 
@@ -320,24 +423,39 @@
         </div>
     </section>
 
+    <!-- تماس -->
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
+            <h2 style="margin-bottom: 2rem; font-weight: 300;">تماس با ما</h2>
+            <div class="contact-info">
+                <p>عرضه مستقیم پارچه پرده‌ای حریر</p>
+                <p>سفارش کالیته و برش عمده برای فروشگاه‌ها</p>
+                <p>📍 تهران و شهرستان | ارسال سراسر ایران</p>
+                <div class="phone-number">📞 ۰۹۱۲۸۹۰۷۳۰۶</div>
+                <p>ایمان درگاهی</p>
+            </div>
+        </div>
+    </section>
+
     <!-- فوتر -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h4>تماس با ما</h4>
-                <p>ایمان درگاهی: ۰۹۱۲۸۹۰۷۳۰۶</p>
-                <p>تهران و شهرستان</p>
+                <img src="logo.png" alt="RION COLLECTION" class="footer-logo">
+                <p>تولید و عرضه مستقیم پارچه‌های پرده‌ای لوکس با کیفیت اروپایی</p>
             </div>
             <div class="footer-section">
                 <h4>خدمات</h4>
-                <p>عرضه مستقیم پارچه</p>
-                <p>برش و دوخت اختصاصی</p>
-                <p>نورپردازی RGB</p>
+                <a href="#">عرضه مستقیم پارچه</a>
+                <a href="#">برش و دوخت اختصاصی</a>
+                <a href="#">نورپردازی RGB</a>
+                <a href="#">نصب حرفه‌ای</a>
             </div>
             <div class="footer-section">
                 <h4>دسترسی سریع</h4>
-                <p><a href="installed-samples.html">نمونه‌های آویزی</a></p>
-                <p><a href="fabric-samples.html">نمونه‌های تور</a></p>
+                <a href="index.html">صفحه اصلی</a>
+                <a href="installed-samples.html">نمونه‌های آویزی</a>
+                <a href="fabric-samples.html">نمونه‌های تور</a>
             </div>
         </div>
         <div class="footer-bottom">
