@@ -34,7 +34,7 @@
         /* هدر */
         .header {
             background: var(--white);
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             border-bottom: 1px solid var(--gray);
             position: sticky;
             top: 0;
@@ -52,7 +52,7 @@
         }
         
         .logo {
-            height: 90px; /* بسیار بزرگتر شد */
+            height: 45px; /* اندازه استاندارد برای دسکتاپ */
             width: auto;
             transition: opacity 0.3s ease;
         }
@@ -62,9 +62,9 @@
         }
         
         .logo-fallback {
-            font-size: 2.8rem; /* بسیار بزرگتر شد */
-            font-weight: 300;
-            letter-spacing: 4px;
+            font-size: 1.5rem; /* اندازه استاندارد متن */
+            font-weight: 500;
+            letter-spacing: 2px;
             color: var(--navy);
             text-decoration: none;
             display: none;
@@ -72,16 +72,16 @@
         
         .nav-links {
             display: flex;
-            gap: 3rem;
+            gap: 2.5rem;
             list-style: none;
         }
         
         .nav-links a {
             text-decoration: none;
             color: var(--dark-gray);
-            font-weight: 300;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
+            font-weight: 400;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
             transition: color 0.3s ease;
             position: relative;
         }
@@ -108,47 +108,47 @@
         /* هیرو سکشن */
         .hero {
             background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 100%);
-            padding: 8rem 0 6rem;
+            padding: 6rem 0 4rem;
             text-align: center;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 300;
+            font-size: 2.8rem;
+            font-weight: 400;
             margin-bottom: 1.5rem;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             color: var(--navy);
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--blue);
             font-weight: 300;
             max-width: 600px;
             margin: 0 auto;
-            line-height: 1.8;
+            line-height: 1.7;
         }
         
         /* گالری نمونه‌ها */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 6rem 2rem;
+            padding: 4rem 2rem;
         }
         
         .section-title {
-            font-size: 2rem;
-            font-weight: 300;
+            font-size: 1.8rem;
+            font-weight: 400;
             text-align: center;
-            margin-bottom: 4rem;
-            letter-spacing: 1px;
+            margin-bottom: 3rem;
+            letter-spacing: 0.5px;
             color: var(--navy);
         }
         
         .samples-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
         
         .sample-card {
@@ -156,70 +156,70 @@
             position: relative;
             overflow: hidden;
             transition: transform 0.3s ease;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(135, 206, 235, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(135, 206, 235, 0.1);
             border: 1px solid var(--light-blue);
         }
         
         .sample-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(135, 206, 235, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(135, 206, 235, 0.15);
         }
         
         .sample-image {
             width: 100%;
-            height: 400px;
+            height: 280px;
             background: linear-gradient(135deg, var(--sky-blue) 0%, var(--blue) 100%);
             margin-bottom: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--white);
-            font-size: 1.1rem;
+            font-size: 1rem;
             font-weight: 400;
         }
         
         .sample-info {
             text-align: center;
-            padding: 0 1.5rem 2rem;
+            padding: 0 1.5rem 1.5rem;
         }
         
         .sample-title {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 500;
             margin-bottom: 0.5rem;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             color: var(--navy);
         }
         
         .sample-type {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--blue);
             font-weight: 300;
             background: var(--light-blue);
             padding: 0.3rem 1rem;
-            border-radius: 15px;
+            border-radius: 12px;
             display: inline-block;
         }
         
         /* سکشن خدمات */
         .services {
             background: var(--light-blue);
-            padding: 6rem 0;
+            padding: 4rem 0;
         }
         
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 4rem;
+            gap: 3rem;
             text-align: center;
         }
         
         .service-item h3 {
-            font-size: 1.2rem;
-            font-weight: 400;
+            font-size: 1.1rem;
+            font-weight: 500;
             margin-bottom: 1rem;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             color: var(--navy);
         }
         
@@ -227,13 +227,14 @@
             color: var(--blue);
             font-weight: 300;
             line-height: 1.6;
+            font-size: 0.95rem;
         }
         
         /* سکشن تماس */
         .contact-section {
             background: linear-gradient(135deg, var(--blue) 0%, var(--dark-blue) 100%);
             color: var(--white);
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
             text-align: center;
         }
         
@@ -243,13 +244,13 @@
         }
         
         .contact-info {
-            font-size: 1.1rem;
-            line-height: 2;
+            font-size: 1rem;
+            line-height: 1.8;
             margin-bottom: 2rem;
         }
         
         .phone-number {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: 500;
             margin: 1rem 0;
             color: var(--white);
@@ -257,28 +258,29 @@
         
         .representatives {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2.5rem;
         }
         
         .rep-card {
             background: rgba(255, 255, 255, 0.1);
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 1.5rem;
+            border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
         
         .rep-card h4 {
             margin-bottom: 1rem;
             font-weight: 500;
+            font-size: 1.1rem;
         }
         
         /* فوتر */
         .footer {
             background: var(--navy);
             color: var(--white);
-            padding: 4rem 0 2rem;
+            padding: 3rem 0 1.5rem;
         }
         
         .footer-content {
@@ -287,19 +289,19 @@
             padding: 0 2rem;
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
+            gap: 2.5rem;
         }
         
         .footer-logo {
-            height: 70px; /* بسیار بزرگتر شد */
+            height: 35px; /* اندازه استاندارد برای فوتر */
             margin-bottom: 1rem;
         }
         
         .footer-section h4 {
             font-size: 1rem;
-            font-weight: 400;
-            margin-bottom: 1.5rem;
-            letter-spacing: 1px;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.5px;
             color: var(--white);
         }
         
@@ -307,9 +309,10 @@
             color: var(--sky-blue);
             text-decoration: none;
             font-weight: 300;
-            line-height: 1.8;
+            line-height: 1.7;
             display: block;
             margin-bottom: 0.5rem;
+            font-size: 0.9rem;
         }
         
         .footer-section a:hover {
@@ -318,12 +321,12 @@
         
         .footer-bottom {
             text-align: center;
-            margin-top: 4rem;
-            padding-top: 2rem;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
             border-top: 1px solid var(--blue);
             color: var(--sky-blue);
             font-weight: 300;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         /* صفحه‌بندی */
@@ -331,29 +334,29 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin: 4rem 0;
+            margin: 3rem 0;
         }
         
         .page-link-card {
             background: var(--white);
-            padding: 3rem 2rem;
-            border-radius: 15px;
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
             text-align: center;
             text-decoration: none;
             color: inherit;
-            border: 2px solid var(--light-blue);
+            border: 1px solid var(--light-blue);
             transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(135, 206, 235, 0.1);
+            box-shadow: 0 4px 15px rgba(135, 206, 235, 0.1);
         }
         
         .page-link-card:hover {
             border-color: var(--sky-blue);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(135, 206, 235, 0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(135, 206, 235, 0.15);
         }
         
         .page-link-icon {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             margin-bottom: 1rem;
             color: var(--blue);
         }
@@ -362,24 +365,26 @@
             color: var(--navy);
             margin-bottom: 1rem;
             font-weight: 500;
+            font-size: 1.2rem;
         }
         
         .page-link-card p {
             color: var(--blue);
+            font-size: 0.95rem;
         }
 
         /* بنر اعتماد */
         .trust-badge {
             background: linear-gradient(135deg, var(--sky-blue), var(--blue));
             color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 25px;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
             font-weight: 400;
-            margin: 2rem auto;
+            margin: 1.5rem auto;
             display: inline-block;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            box-shadow: 0 5px 15px rgba(135, 206, 235, 0.3);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
         }
 
         @media (max-width: 768px) {
@@ -388,7 +393,11 @@
             }
             
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
             }
             
             .samples-grid {
@@ -396,11 +405,11 @@
             }
             
             .logo {
-                height: 75px; /* بسیار بزرگتر برای موبایل */
+                height: 40px; /* اندازه استاندارد برای موبایل */
             }
             
             .logo-fallback {
-                font-size: 2.2rem; /* بزرگ برای موبایل */
+                font-size: 1.3rem;
             }
             
             .representatives {
@@ -412,21 +421,33 @@
             }
             
             .footer-logo {
-                height: 60px; /* بزرگ برای موبایل */
+                height: 30px;
+            }
+            
+            .container {
+                padding: 3rem 1rem;
             }
         }
 
         @media (max-width: 480px) {
             .logo {
-                height: 65px; /* اندازه متعادل برای موبایل‌های کوچک */
+                height: 35px;
             }
             
             .logo-fallback {
-                font-size: 2rem;
+                font-size: 1.2rem;
             }
             
             .footer-logo {
-                height: 55px;
+                height: 28px;
+            }
+            
+            .hero {
+                padding: 4rem 0 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
             }
         }
     </style>
@@ -437,7 +458,6 @@
     <header class="header">
         <nav class="nav-container">
             <a href="index.html">
-                <!-- لوگو با فال‌بک متن -->
                 <img src="logo.png" alt="RION COLLECTION" class="logo" 
                      onerror="this.style.display='none'; document.getElementById('logoFallback').style.display='block';">
                 <span id="logoFallback" class="logo-fallback">RION</span>
@@ -456,7 +476,7 @@
         <div class="container">
             <h1>RION COLLECTION</h1>
             <p>نمایشگاه تخصصی نمونه‌های نصب شده و نمای نزدیک پارچه‌های پرده‌ای لوکس</p>
-            <div class="trust-badge">✅ همکاری بیش از 500 گالری معتبر</div>
+            <div class="trust-badge">✅ همکاری با بیش از ۵۰۰ گالری معتبر</div>
         </div>
     </section>
 
@@ -531,7 +551,7 @@
     <!-- تماس -->
     <section id="contact" class="contact-section">
         <div class="contact-content">
-            <h2 style="margin-bottom: 2rem; font-weight: 300;">تماس با ما</h2>
+            <h2 style="margin-bottom: 1.5rem; font-weight: 400;">تماس با ما</h2>
             <div class="contact-info">
                 <p>مشاوره برای دریافت آلبوم</p>
                 <p>همکاری در سراسر ایران</p>
