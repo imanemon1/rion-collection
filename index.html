@@ -229,7 +229,7 @@
         }
         
         .contact-content {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
         
@@ -244,6 +244,25 @@
             font-weight: 500;
             margin: 1rem 0;
             color: var(--white);
+        }
+        
+        .representatives {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .rep-card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .rep-card h4 {
+            margin-bottom: 1rem;
+            font-weight: 500;
         }
         
         /* فوتر */
@@ -370,6 +389,10 @@
             .logo {
                 height: 40px;
             }
+            
+            .representatives {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
@@ -475,8 +498,20 @@
                 <p>مشاوره برای دریافت آلبوم</p>
                 <p>همکاری در سراسر ایران</p>
                 <p>📍 تهران و شهرستان | ارسال سراسر ایران</p>
-                <div class="phone-number">📞 ۰۹۱۲۸۹۰۷۳۰۶</div>
-                <p>ایمان درگاهی - مشاور تخصصی نصب</p>
+            </div>
+
+            <div class="representatives">
+                <div class="rep-card">
+                    <h4>📞 نمایندگی تهران</h4>
+                    <div class="phone-number">۰۹۱۲۸۹۰۷۳۰۶</div>
+                    <p>ایمان درگاهی - مشاور تخصصی</p>
+                </div>
+                
+                <div class="rep-card">
+                    <h4>📞 نمایندگی شهرستان‌ها</h4>
+                    <div class="phone-number">۰۹۱۲۴۲۱۲۷۴۲</div>
+                    <p>میثم بهاری - مسئول شهرستان‌ها</p>
+                </div>
             </div>
         </div>
     </section>
@@ -486,11 +521,11 @@
         <div class="footer-content">
             <div class="footer-section">
                 <img src="logo.png" alt="RION COLLECTION" class="footer-logo">
-                <p>تخصص ما در اجرای پروژه‌های نصب پارچه پرده‌ای لوکس</p>
+                <p>تخصص ما کاتینگ پرده است</p>
             </div>
             <div class="footer-section">
                 <h4>خدمات</h4>
-                <a href="#">مشاوره نصب</a>
+                <a href="#">مشاوره دریافت آلبوم</a>
                 <a href="#">اجرای پروژه</a>
                 <a href="#">نمونه نصب شده</a>
                 <a href="#">نمای نزدیک</a>
@@ -501,9 +536,15 @@
                 <a href="installed-samples.html">نمونه نصب شده</a>
                 <a href="close-up-samples.html">نمای نزدیک</a>
             </div>
+            <div class="footer-section">
+                <h4>شبکه‌های اجتماعی</h4>
+                <a href="#">اینستاگرام</a>
+                <a href="#">تلگرام</a>
+                <a href="#">واتساپ</a>
+            </div>
         </div>
         <div class="footer-bottom">
-            <p>© ۲۰۲۴ RION COLLECTION - تخصص در اجرای پروژه‌های نصب</p>
+            <p>© ۲۰۲۴ RION COLLECTION - تخصص ما در کاتینگ پرده است</p>
         </div>
     </footer>
 </body>
