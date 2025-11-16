@@ -31,7 +31,6 @@
             min-height: 100vh;
         }
         
-        /* هدر */
         .header {
             background: var(--white);
             padding: 1.2rem 0;
@@ -73,7 +72,6 @@
             color: var(--blue);
         }
         
-        /* محتوای اصلی */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -105,15 +103,11 @@
             transform: translateY(-5px);
         }
         
-        .photo-image {
+        .photo-image img {
             width: 100%;
             height: 300px;
-            background: var(--light-blue);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--blue);
-            font-size: 1rem;
+            object-fit: cover;
+            display: block;
         }
         
         .photo-info {
@@ -177,36 +171,47 @@
         <h1 class="page-title">نمونه‌های اجرا شده در ویلاها</h1>
         
         <div class="gallery">
-            <!-- نمونه ۱ -->
+            <!-- عکس ۱ -->
             <div class="photo-card">
                 <div class="photo-image">
-                    🏔️ ویلای کوهستانی
+                    <img src="villa/villa-1.jpg" alt="ویلای شماره 1">
                 </div>
                 <div class="photo-info">
-                    <h3 class="photo-title">ویلای مدرن کوهستانی</h3>
-                    <p class="photo-description">پرده حریر لوکس با نورپردازی RGB</p>
+                    <h3 class="photo-title">ویلای شماره ۱</h3>
+                    <p class="photo-description">نمونه اجرا شده شماره ۱</p>
                 </div>
             </div>
 
-            <!-- نمونه ۲ -->
+            <!-- عکس ۲ -->
             <div class="photo-card">
                 <div class="photo-image">
-                    🌅 ویلای ساحلی
+                    <img src="villa/villa-2.jpg" alt="ویلای شماره 2">
                 </div>
                 <div class="photo-info">
-                    <h3 class="photo-title">ویلای ساحلی شمال</h3>
-                    <p class="photo-description">پرده تور ضدحساسیت برای فضای مرطوب</p>
+                    <h3 class="photo-title">ویلای شماره ۲</h3>
+                    <p class="photo-description">نمونه اجرا شده شماره ۲</p>
                 </div>
             </div>
 
-            <!-- نمونه ۳ -->
+            <!-- عکس ۳ -->
             <div class="photo-card">
                 <div class="photo-image">
-                    🏡 ویلای کلاسیک
+                    <img src="villa/villa-3.jpg" alt="ویلای شماره 3">
                 </div>
                 <div class="photo-info">
-                    <h3 class="photo-title">ویلای کلاسیک اروپایی</h3>
-                    <p class="photo-description">پرده مخمل با دوخت سیم‌دوزی</p>
+                    <h3 class="photo-title">ویلای شماره ۳</h3>
+                    <p class="photo-description">نمونه اجرا شده شماره ۳</p>
+                </div>
+            </div>
+
+            <!-- عکس ۴ -->
+            <div class="photo-card">
+                <div class="photo-image">
+                    <img src="villa/villa-4.jpg" alt="ویلای شماره 4">
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">ویلای شماره ۴</h3>
+                    <p class="photo-description">نمونه اجرا شده شماره ۴</p>
                 </div>
             </div>
         </div>
