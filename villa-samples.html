@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نمونه‌های ویلا - RION COLLECTION</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --light-blue: #f0f8ff;
+            --sky-blue: #87ceeb;
+            --blue: #4682b4;
+            --dark-blue: #2c5aa0;
+            --navy: #1e3a8a;
+            --gray: #e9ecef;
+            --dark-gray: #6c757d;
+            --black: #212529;
+        }
+        
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Vazirmatn', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; 
+        }
+        
+        body { 
+            background: var(--white); 
+            color: var(--black); 
+            line-height: 1.6; 
+            min-height: 100vh;
+        }
+        
+        /* هدر */
+        .header {
+            background: var(--white);
+            padding: 1.2rem 0;
+            border-bottom: 1px solid var(--gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 50px;
+            width: auto;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 400;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+        
+        /* محتوای اصلی */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+        
+        .page-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 3rem;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .photo-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .photo-image {
+            width: 100%;
+            height: 300px;
+            background: var(--light-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--blue);
+            font-size: 1rem;
+        }
+        
+        .photo-info {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .photo-title {
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+        }
+        
+        .photo-description {
+            color: var(--dark-gray);
+            font-size: 0.9rem;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-top: 3rem;
+            color: var(--blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css">
+</head>
+<body>
+    <!-- هدر -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html">
+                <img src="logo.png" alt="RION COLLECTION" class="logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">صفحه اصلی</a></li>
+                <li><a href="villa-samples.html">نمونه ویلا</a></li>
+                <li><a href="installed-samples.html">نمونه نصب شده</a></li>
+                <li><a href="close-up-samples.html">نمای نزدیک</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- محتوای اصلی -->
+    <div class="container">
+        <h1 class="page-title">نمونه‌های اجرا شده در ویلاها</h1>
+        
+        <div class="gallery">
+            <!-- نمونه ۱ -->
+            <div class="photo-card">
+                <div class="photo-image">
+                    🏔️ ویلای کوهستانی
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">ویلای مدرن کوهستانی</h3>
+                    <p class="photo-description">پرده حریر لوکس با نورپردازی RGB</p>
+                </div>
+            </div>
+
+            <!-- نمونه ۲ -->
+            <div class="photo-card">
+                <div class="photo-image">
+                    🌅 ویلای ساحلی
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">ویلای ساحلی شمال</h3>
+                    <p class="photo-description">پرده تور ضدحساسیت برای فضای مرطوب</p>
+                </div>
+            </div>
+
+            <!-- نمونه ۳ -->
+            <div class="photo-card">
+                <div class="photo-image">
+                    🏡 ویلای کلاسیک
+                </div>
+                <div class="photo-info">
+                    <h3 class="photo-title">ویلای کلاسیک اروپایی</h3>
+                    <p class="photo-description">پرده مخمل با دوخت سیم‌دوزی</p>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-link">← بازگشت به صفحه اصلی</a>
+    </div>
+</body>
+</html>
