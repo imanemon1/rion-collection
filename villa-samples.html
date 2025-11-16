@@ -16,21 +16,18 @@
             --dark-gray: #6c757d;
             --black: #212529;
         }
-        
         * { 
             margin: 0; 
             padding: 0; 
             box-sizing: border-box; 
             font-family: 'Vazirmatn', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif; 
         }
-        
         body { 
             background: var(--white); 
             color: var(--black); 
             line-height: 1.6; 
             min-height: 100vh;
         }
-        
         .header {
             background: var(--white);
             padding: 1.2rem 0;
@@ -39,7 +36,6 @@
             top: 0;
             z-index: 1000;
         }
-        
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
@@ -48,18 +44,15 @@
             justify-content: space-between;
             align-items: center;
         }
-        
         .logo {
             height: 50px;
             width: auto;
         }
-        
         .nav-links {
             display: flex;
             gap: 2.5rem;
             list-style: none;
         }
-        
         .nav-links a {
             text-decoration: none;
             color: var(--dark-gray);
@@ -67,30 +60,25 @@
             font-size: 0.95rem;
             transition: color 0.3s ease;
         }
-        
         .nav-links a:hover {
             color: var(--blue);
         }
-        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 3rem 2rem;
         }
-        
         .page-title {
             text-align: center;
             font-size: 2.2rem;
             color: var(--navy);
             margin-bottom: 3rem;
         }
-        
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
         }
-        
         .photo-card {
             background: var(--white);
             border-radius: 12px;
@@ -98,34 +86,28 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
-        
         .photo-card:hover {
             transform: translateY(-5px);
         }
-        
         .photo-image img {
             width: 100%;
             height: 300px;
             object-fit: cover;
             display: block;
         }
-        
         .photo-info {
             padding: 1.5rem;
             text-align: center;
         }
-        
         .photo-title {
             font-size: 1.2rem;
             color: var(--navy);
             margin-bottom: 0.5rem;
         }
-        
         .photo-description {
             color: var(--dark-gray);
             font-size: 0.9rem;
         }
-        
         .back-link {
             display: inline-block;
             margin-top: 3rem;
@@ -133,16 +115,13 @@
             text-decoration: none;
             font-weight: 500;
         }
-        
         .back-link:hover {
             text-decoration: underline;
         }
-
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            
             .gallery {
                 grid-template-columns: 1fr;
             }
@@ -165,49 +144,44 @@
             </ul>
         </nav>
     </header>
-
     <!-- محتوای اصلی -->
     <div class="container">
         <h1 class="page-title">نمونه‌های اجرا شده در ویلاها</h1>
-        
         <div class="gallery">
             <!-- عکس ۱ -->
             <div class="photo-card">
                 <div class="photo-image">
-                    <img src="villa/villa-1.jpg" alt="ویلای شماره 1">
+                    <img src="villa-1.jpg.jpg" alt="ویلای شماره 1">
                 </div>
                 <div class="photo-info">
                     <h3 class="photo-title">ویلای شماره ۱</h3>
                     <p class="photo-description">نمونه اجرا شده شماره ۱</p>
                 </div>
             </div>
-
             <!-- عکس ۲ -->
             <div class="photo-card">
                 <div class="photo-image">
-                    <img src="villa/villa-2.jpg" alt="ویلای شماره 2">
+                    <img src="villa-2.jpg.jpg" alt="ویلای شماره 2">
                 </div>
                 <div class="photo-info">
                     <h3 class="photo-title">ویلای شماره ۲</h3>
                     <p class="photo-description">نمونه اجرا شده شماره ۲</p>
                 </div>
             </div>
-
             <!-- عکس ۳ -->
             <div class="photo-card">
                 <div class="photo-image">
-                    <img src="villa/villa-3.jpg" alt="ویلای شماره 3">
+                    <img src="villa-3.jpg.jpg" alt="ویلای شماره 3">
                 </div>
                 <div class="photo-info">
                     <h3 class="photo-title">ویلای شماره ۳</h3>
                     <p class="photo-description">نمونه اجرا شده شماره ۳</p>
                 </div>
             </div>
-
             <!-- عکس ۴ -->
             <div class="photo-card">
                 <div class="photo-image">
-                    <img src="villa/villa-4.jpg" alt="ویلای شماره 4">
+                    <img src="villa-4.jpg.jpg" alt="ویلای شماره 4">
                 </div>
                 <div class="photo-info">
                     <h3 class="photo-title">ویلای شماره ۴</h3>
@@ -215,7 +189,6 @@
                 </div>
             </div>
         </div>
-
         <a href="index.html" class="back-link">← بازگشت به صفحه اصلی</a>
     </div>
 </body>
