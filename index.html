@@ -113,7 +113,14 @@ footer{text-align:center;padding:26px 20px;color:var(--mute);font-size:13px}
 .segs .seg{flex:1;font:inherit;font-size:13px;padding:8px 6px;border:0;border-radius:99px;background:transparent;color:#cfd8e2;cursor:pointer}
 .segs .seg[aria-pressed="true"]{background:#fff;color:var(--ink,#14284b);font-weight:600}
 .segs .seg:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
-.wab-o{background:linear-gradient(135deg,#8a6d3b,#c9a96b);color:#1e1404}
+.wab-o{background:#1f9d57;color:#fff;font-weight:800;border:2px solid #fff}
+.mh{text-align:right;margin:6px 0 2px}.mh.hide{display:none}.mrow{display:flex;align-items:center;justify-content:space-between;gap:10px}.mh b{display:block;font-size:19px;font-weight:800;color:#fff}.mh span{display:block;font-size:12.5px;color:#cfd8e2;margin-top:2px}
+.err{margin:0 0 8px;font-size:13px;font-weight:700;color:#c62828;text-align:right}
+#lb .err{color:#ff9e9e}
+.swrow{display:flex;justify-content:flex-start;margin:4px 0 12px}
+.swrow.hide{display:none}
+.swb{font:inherit;font-size:13px;font-weight:800;padding:8px 18px;border:0;border-radius:99px;background:#f4b942;color:#14284b;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.swb:focus-visible{outline:3px solid #fff;outline-offset:2px}
 .cloth.photo::after{background:radial-gradient(circle at var(--sx,50%) var(--sy,30%),rgba(255,255,255,.2),transparent 55%)}
 @media (prefers-reduced-motion:reduce){.sw{animation:none}}
 .hide{display:none}
@@ -221,7 +228,7 @@ body[data-room=""] .mini{display:none}
 <img class="hlogo" alt="Rion Collection">
 <p class="slogan">ظرافت نور، در تار و پود حریر و تور</p>
 <div class="hbtn"><button type="button" class="b1" data-go="collections">مشاهده مجموعه‌ها</button><button type="button" class="b2" data-go="about">آشنایی با ریون</button></div>
-<nav class="hq" aria-label="دسته‌بندی‌ها"><button type="button" data-v="harir">حریر</button><button type="button" data-v="tor">تور</button><button type="button" data-v="bedroom">اتاق‌خوابی</button><button type="button" data-v="salon">سالنی</button></nav>
+<nav class="hq" aria-label="دسته‌بندی‌ها"><button type="button" data-v="harir">حریر</button><button type="button" data-v="tor">تور</button><button type="button" data-v="keta">کتان</button></nav>
 </div>
 </section>
 <header class="mini"><img class="mlogo" alt="Rion Collection"><h1>نمایشگاه ریون</h1></header>
@@ -248,12 +255,9 @@ body[data-room=""] .mini{display:none}
 <div id="lb" role="dialog" aria-modal="true" aria-label="نمایش طرح">
 <button id="x" aria-label="بستن">×</button>
 <div class="box"><div class="big" id="big"></div><h3 id="lt"></h3><p id="ld"></p><div id="dots"></div>
-<div class="segs" role="tablist" aria-label="نوع درخواست">
-<button type="button" class="seg" aria-pressed="true" data-m="consult">مشاوره و کالیته</button>
-<button type="button" class="seg" aria-pressed="false" data-m="order">ثبت سفارش متراژی</button>
-</div>
-<div id="lf"></div>
-<div id="of" class="hide"></div>
+<div class="mh" id="mh"><div class="mrow"><b id="mht">ثبت سفارش متراژی</b><button type="button" id="sw" class="swb">دریافت کالیته</button></div><span>برای ثبت سفارش، همه‌ی موارد را کامل کنید</span></div>
+<div id="lf" class="hide"></div>
+<div id="of"></div>
 </div>
 </div>
 
@@ -270,7 +274,7 @@ function mkForm(host,topic,order){
  (order?'<label>متراژ درخواستی (متر)<input type="number" min="1" inputmode="numeric" placeholder="مثلاً ۵۰"></label>':
  '<label>نوع فعالیت<select><option value="">انتخاب کنید</option><option>دکوراسیون داخلی</option><option>پرده‌فروشی</option><option>سایر</option></select></label>'+
  '<label>سابقه کار<select><option value="">انتخاب کنید</option><option>کمتر از ۱ سال</option><option>۱ تا ۳ سال</option><option>۳ تا ۱۰ سال</option><option>بیش از ۱۰ سال</option></select></label>')+
- '</div><a class="wab'+(order?' wab-o':'')+'" target="_blank" rel="noopener" href="#">'+(order?'ثبت سفارش متراژی در واتساپ':'مشاوره و درخواست کالیته')+'</a>';
+ '</div><p class="err" hidden>لطفاً همه‌ی فیلدها را کامل کنید.</p><a class="wab'+(order?' wab-o':'')+'" target="_blank" rel="noopener" href="#">'+(order?'ثبت سفارش متراژی در واتساپ':'مشاوره و درخواست کالیته')+'</a>';
  var prov=host.querySelector("input"),f=host.querySelectorAll("input")[1],shop=host.querySelectorAll("input")[2],extra=order?host.querySelectorAll("input")[3]:null,s=host.querySelectorAll("select"),a=host.querySelector(".wab");
  function up(){var tp=topic(),m=order?"سلام، می‌خواهم سفارش متراژی ثبت کنم.":"سلام، شرایط دریافت کالیته چیست؟";
   if(tp)m+="\nطرح مورد نظر: "+tp;
@@ -280,6 +284,9 @@ function mkForm(host,topic,order){
   if(order){if(extra.value.trim())m+="\nمتراژ درخواستی: "+extra.value.trim()+" متر"}
   else{if(s[0].value)m+="\nنوع فعالیت: "+s[0].value;if(s[1].value)m+="\nسابقه کار: "+s[1].value}
   a.href="https://wa.me/989199911153?text="+encodeURIComponent(m)}
+ var er=host.querySelector(".err");
+ a.addEventListener("click",function(e){var bad=false;host.querySelectorAll("input,select").forEach(function(el){var v=el.value.trim(),ok=el.type==="number"?(+v>0):v!=="";el.style.borderColor=ok?"":"#e53935";if(!ok)bad=true});er.hidden=!bad;if(bad)e.preventDefault()});
+ host.addEventListener("input",function(e){e.target.style.borderColor="";er.hidden=true});
  host.addEventListener("input",up);host.addEventListener("change",up);up();return up}
 var cur="";
 mkForm(document.getElementById("cf"),function(){return ""},false);
@@ -368,20 +375,18 @@ function showPh(){var bg=document.getElementById("big");bg.style.setProperty("--
 document.getElementById("big").addEventListener("click",function(){if(gal&&gal.length>1){gi=(gi+1)%gal.length;showPh()}});
 function openLb(n,btn){var it=all[n];last=btn;
  var bg=document.getElementById("big"),nm=it.b?"آلبوم "+it.n:(it.r?it.r+" ":"")+it.n;
- bg.style.setProperty("--pat",it.p);bg.classList.toggle("book",!!(it.ph||it.b));var sg=document.querySelector(".segs");if(sg)sg.classList.toggle("hide",!!it.b);curIt=it;
+ bg.style.setProperty("--pat",it.p);bg.classList.toggle("book",!!(it.ph||it.b));document.getElementById("mh").classList.toggle("hide",!!it.b);curIt=it;
  document.getElementById("lt").textContent=nm;
  document.getElementById("ld").textContent=it.b?(it.ph?"":"برای دریافت آلبوم، اطلاعات زیر را تکمیل کنید و در واتساپ ارسال کنید"):it.sp+" · "+CN[it.c];bg.style.display=(it.b&&!it.ph)?"none":"";
  cur=nm+(it.note?" — "+it.note:"");upLb();upOrd();
- document.querySelectorAll('.segs .seg').forEach(function(x,i){x.setAttribute('aria-pressed',i===0)});
- document.getElementById('lf').classList.remove('hide');document.getElementById('of').classList.add('hide');
+ setMode(it.b?"consult":"order");
  gal=it.ph;gi=0;if(gal)showPh();else document.getElementById('dots').innerHTML='';
  lb.classList.add("on");lbOn=true;document.getElementById("x").focus()}
 function closeLb(){lb.classList.remove("on");lbOn=false;if(last)last.focus()}
 root.addEventListener("click",function(e){var b=e.target.closest(".hg");if(b)openLb(+b.dataset.n,b)});
-document.querySelectorAll(".segs .seg").forEach(function(b){b.addEventListener("click",function(){
- document.querySelectorAll(".segs .seg").forEach(function(x){x.setAttribute("aria-pressed",x===b)});
- document.getElementById("lf").classList.toggle("hide",b.dataset.m!=="consult");
- document.getElementById("of").classList.toggle("hide",b.dataset.m!=="order")})});
+var mode="order";
+function setMode(m){mode=m;document.getElementById("lf").classList.toggle("hide",m!=="consult");document.getElementById("of").classList.toggle("hide",m!=="order");document.getElementById("sw").textContent=m==="order"?"دریافت کالیته":"ثبت سفارش متراژی";document.getElementById("mht").textContent=m==="order"?"ثبت سفارش متراژی":"دریافت کالیته"}
+document.getElementById("sw").addEventListener("click",function(){setMode(mode==="order"?"consult":"order")});
 document.getElementById("x").addEventListener("click",closeLb);
 lb.addEventListener("click",function(e){if(e.target===lb)closeLb()});
 document.addEventListener("keydown",function(e){if(e.key==="Escape"&&lbOn)closeLb()});
